@@ -1,12 +1,14 @@
 import React from 'react'
-import { CssBaseline, Grid } from '@mui/material'
+import { createTheme, CssBaseline, Grid } from '@mui/material'
 import Header from './components/Header/Header'
 import List from './components/List/List'
 import Map from './components/Map/Map'
+import { ThemeProvider } from '@mui/styles'
 
 function App() {
+  const theme = createTheme()
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header />
       <Grid container spacing={3} style={{ width: '100%' }}>
@@ -17,7 +19,7 @@ function App() {
           <Map />
         </Grid>
       </Grid>
-    </>
+    </ThemeProvider>
   )
 }
 
